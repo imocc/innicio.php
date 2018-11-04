@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Documento sin título</title>
+         
+<label for="puesto" style="margin-left:2%;" >Puesto:</label> 
+<select id='opciones' name="opciones" onchange='cambioOpciones();'>
+        <option value=" "></option>        
+        <option value='Empleado'>puesto1</option>
+        <option value='tipo2'>puesto2</option>
+
+    </select>
+
+    <!-- input donde se mostrara el id de la opción -->
+
+<input type="text"  name="showId"  id='showId' value="" />
+
+<div id="content" style="display: none;">
+  <label for="ib" style="margin-left:8%;" >NSS*:</label> 
+<input type="text" name="nss" id="nss" value=" " autocomplete="off" required  />
+
+<!--   ///si no es necesario debe estar oculto en caso de ser cobrador asesor y gestor de cobranza  --->
+<label for="cb" style="margin-left:2%;" >Cuenta Bancaria*:</label> 
+<input type="text" name="cb" id="cb" value=" " autocomplete="off" required  />
+
+<label for="ib" style="margin-left:2%;" >institucion Bancaria*:</label> 
+<input type="text" name="ib" id="ib" value=" " autocomplete="off" required  />
+ </div>
+
+ <script type="text/javascript">
+ 	
+
+function cambioOpciones()
+{ 
+    var element = document.getElementById('content');
+    var showId = document.getElementById('opciones').value;
+    document.getElementById('showId').value = showId;
+    if (showId=="Empleado") {
+        element.style.display='block';
+    }
+    else {
+        element.style.display='none';
+    }
+
+}
+
+ </script>
+  </body>
+</html>
